@@ -1,96 +1,233 @@
-# Sealed Offer Drive
+# 🔒 Sealed Offer Drive
 
-A privacy-preserving job application platform built with FHE (Fully Homomorphic Encryption) technology, ensuring complete confidentiality of job applications and salary negotiations.
+> **Revolutionary Privacy-First Job Application Platform**  
+> Where your career dreams meet cryptographic security
 
-## Features
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Ethereum](https://img.shields.io/badge/Ethereum-3C3C3D?logo=ethereum&logoColor=white)](https://ethereum.org/)
 
-- **Privacy-First Design**: All sensitive data is encrypted using FHE technology
-- **Secure Job Applications**: Submit applications without revealing personal information
-- **Confidential Salary Negotiations**: Negotiate offers while keeping details private
-- **Blockchain Integration**: Built on Ethereum Sepolia testnet with smart contract integration
-- **Modern UI**: Built with React, TypeScript, and Tailwind CSS
+---
 
-## Technology Stack
+## 🌟 What Makes Us Different?
 
-- **Frontend**: React 18, TypeScript, Vite
-- **UI Components**: shadcn/ui, Radix UI, Tailwind CSS
-- **Blockchain**: Ethereum Sepolia, Wagmi, RainbowKit
-- **Encryption**: FHE (Fully Homomorphic Encryption)
-- **Smart Contracts**: Solidity with FHE integration
+In a world where your personal data is constantly exposed, **Sealed Offer Drive** revolutionizes job applications with **Fully Homomorphic Encryption (FHE)** technology. Your salary expectations, experience details, and personal information remain completely private until you choose to reveal them.
 
-## Getting Started
+### 🛡️ Privacy by Design
+- **Zero-Knowledge Applications**: Submit applications without revealing sensitive data
+- **Encrypted Negotiations**: Salary discussions happen in complete privacy
+- **Selective Disclosure**: You control what information employers see and when
+
+### ⚡ Cutting-Edge Technology
+- **FHE Encryption**: Data stays encrypted even during processing
+- **Blockchain Security**: Immutable, transparent, and secure
+- **Modern Web3**: Seamless wallet integration with leading providers
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
-
-- Node.js 18+ and npm
-- Git
+- **Node.js** 18+ 
+- **npm** or **yarn**
+- **Web3 Wallet** (MetaMask, Rainbow, etc.)
 
 ### Installation
 
-1. Clone the repository:
 ```bash
+# Clone the repository
 git clone https://github.com/antonperez33/sealed-offer-drive.git
 cd sealed-offer-drive
-```
 
-2. Install dependencies:
-```bash
+# Install dependencies
 npm install
-```
 
-3. Set up environment variables:
-```bash
-cp .env.example .env.local
-```
+# Set up environment
+cp env.example .env.local
 
-4. Start the development server:
-```bash
+# Start development server
 npm run dev
 ```
 
-## Environment Variables
+🎉 **That's it!** Open [http://localhost:8080](http://localhost:8080) to see the magic.
+
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create a `.env.local` file with the following variables:
 
 ```env
+# Blockchain Configuration
 NEXT_PUBLIC_CHAIN_ID=11155111
-NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/b18fb7e6ca7045ac83c41157ab93f990
-NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=2ec9743d0d0cd7fb94dee1a7e6d33475
-NEXT_PUBLIC_INFURA_API_KEY=b18fb7e6ca7045ac83c41157ab93f990
+NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=YOUR_WALLET_CONNECT_ID
+
+# Smart Contract (Update after deployment)
+NEXT_PUBLIC_CONTRACT_ADDRESS=0x...
 ```
 
-## Smart Contract
+> ⚠️ **Security Note**: Never commit sensitive keys to version control. Use environment variables for all secrets.
 
-The platform uses FHE-enabled smart contracts to ensure data privacy:
+---
 
-- **SealedOfferContract**: Manages encrypted job applications and offers
-- **FHE Integration**: All sensitive data is encrypted using Zama's FHE technology
-- **Privacy Preservation**: Data remains encrypted even during processing
+## 🏗️ Architecture
 
-## Deployment
+### Frontend Stack
+- **⚛️ React 18** - Modern UI framework
+- **📘 TypeScript** - Type-safe development
+- **⚡ Vite** - Lightning-fast build tool
+- **🎨 Tailwind CSS** - Utility-first styling
+- **🧩 shadcn/ui** - Beautiful component library
 
-### Vercel Deployment
+### Blockchain Integration
+- **🔗 Wagmi** - React hooks for Ethereum
+- **🌈 RainbowKit** - Wallet connection made easy
+- **⚡ Viem** - TypeScript interface for Ethereum
+- **🔒 FHE** - Fully Homomorphic Encryption
 
-1. Connect your GitHub repository to Vercel
-2. Set environment variables in Vercel dashboard
-3. Deploy automatically on push to main branch
+### Smart Contract
+- **📜 Solidity** - Smart contract language
+- **🔐 Zama FHE** - Privacy-preserving computations
+- **🌐 Sepolia** - Ethereum testnet deployment
 
-### Manual Deployment
+---
+
+## 🔐 How It Works
+
+```mermaid
+graph TD
+    A[👤 Job Seeker] --> B[🔒 Encrypt Application]
+    B --> C[📝 Submit to Blockchain]
+    C --> D[🏢 Employer Reviews]
+    D --> E[💼 Make Encrypted Offer]
+    E --> F[🤝 Private Negotiation]
+    F --> G[✅ Accept/Reject]
+```
+
+### 1. **Encrypted Application**
+Your resume, salary expectations, and personal details are encrypted using FHE technology before submission.
+
+### 2. **Selective Visibility**
+Employers see only your skills summary and cover letter initially. Full details are revealed only after mutual interest.
+
+### 3. **Private Negotiations**
+Salary discussions happen in complete privacy. Neither party sees the other's data until agreement is reached.
+
+### 4. **Blockchain Security**
+All interactions are recorded on the blockchain, ensuring transparency and preventing tampering.
+
+---
+
+## 🛠️ Development
+
+### Available Scripts
 
 ```bash
-npm run build
-npm run preview
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run preview      # Preview production build
+npm run lint         # Run ESLint
+npm run deploy:vercel # Deploy to Vercel
 ```
 
-## Contributing
+### Project Structure
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+```
+src/
+├── components/          # React components
+│   ├── ui/             # Reusable UI components
+│   ├── WalletConnect.tsx
+│   └── ApplicationForm.tsx
+├── hooks/              # Custom React hooks
+│   └── useContract.ts  # Smart contract integration
+├── lib/                # Utility functions
+│   └── wallet.ts       # Wallet configuration
+└── pages/              # Page components
+```
 
-## License
+---
 
-MIT License - see LICENSE file for details
+## 🚀 Deployment
 
-## Support
+### Vercel (Recommended)
 
-For support and questions, please open an issue on GitHub.
+1. **Connect Repository**
+   - Import project from GitHub
+   - Select Vite framework preset
+
+2. **Configure Environment**
+   - Add environment variables
+   - Set build command: `npm run build`
+   - Set output directory: `dist`
+
+3. **Deploy**
+   - Click deploy and wait for completion
+   - Your app will be live at `your-project.vercel.app`
+
+### Smart Contract Deployment
+
+See [SMART_CONTRACT_DEPLOYMENT.md](./SMART_CONTRACT_DEPLOYMENT.md) for detailed instructions.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Here's how you can help:
+
+1. **🐛 Report Bugs** - Open an issue with detailed information
+2. **💡 Suggest Features** - Share your ideas for improvement
+3. **🔧 Submit PRs** - Fix bugs or add new features
+4. **📚 Improve Docs** - Help others understand the project
+
+### Development Workflow
+
+```bash
+# Fork the repository
+git clone https://github.com/YOUR_USERNAME/sealed-offer-drive.git
+
+# Create feature branch
+git checkout -b feature/amazing-feature
+
+# Make changes and commit
+git commit -m "Add amazing feature"
+
+# Push and create PR
+git push origin feature/amazing-feature
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- **Zama** for FHE technology
+- **Rainbow** for wallet integration
+- **Vercel** for deployment platform
+- **shadcn** for beautiful components
+
+---
+
+## 📞 Support
+
+- **🐛 Bug Reports**: [GitHub Issues](https://github.com/antonperez33/sealed-offer-drive/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/antonperez33/sealed-offer-drive/discussions)
+- **📧 Contact**: Open an issue for direct communication
+
+---
+
+<div align="center">
+
+**Built with ❤️ for privacy-conscious job seekers**
+
+[⭐ Star this repo](https://github.com/antonperez33/sealed-offer-drive) | [🐛 Report Bug](https://github.com/antonperez33/sealed-offer-drive/issues) | [💡 Request Feature](https://github.com/antonperez33/sealed-offer-drive/issues)
+
+</div>
