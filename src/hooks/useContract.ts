@@ -114,6 +114,15 @@ export function useSealedOfferContract() {
     inputProof: string
   ) => {
     try {
+      // Validate inputs
+      if (!positionTitle || !companyName || !salaryExpectation || !experienceYears || !educationLevel) {
+        throw new Error('All required fields must be filled');
+      }
+
+      if (CONTRACT_ADDRESS === '0x0000000000000000000000000000000000000000') {
+        throw new Error('Smart contract not deployed. Please contact administrator.');
+      }
+
       const hash = await writeContract({
         address: CONTRACT_ADDRESS as `0x${string}`,
         abi: CONTRACT_ABI,
